@@ -5,6 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F6F6EF;
+}
+
+h2{
+  margin: 10px 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit; 
+}
+
+p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+ul, li {
+  list-style-type: none;
 }
 
 code {

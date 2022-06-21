@@ -1,0 +1,195 @@
+@import "./variables.scss";
+
+.main-container {
+  overflow: hidden;
+}
+
+.app-header{
+  text-align: center;
+}
+
+.app-wrapper{
+  display: flex;
+  top: 100px;
+  position: absolute;
+}
+
+.skeleton{
+  margin-bottom: 5px;
+}
+
+.active-news {
+  background-color: darken($light, 5%);
+  padding: 5px;
+  padding-bottom: 20px;
+  position: relative;
+
+  .icon{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+
+    &:hover{
+      color: $dark;
+    }
+  }
+
+  .content{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+}
+
+.items-wrapper{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  gap: 5px;
+
+  margin: 5px;
+  height: calc(100vh - 120px);
+
+  &.news{
+    width: 600px;
+  }
+
+  &.comments{
+    height: calc(100vh - 120px);
+    width: calc(100vw - 630px)
+  }
+
+  .author{
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .date{
+    font-style: italic;
+    font-size: 11px;
+  }
+
+  .comment-row{
+    background-color: $light;
+    padding: 10px;
+
+    .comment-header{
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      padding: 5px 0;
+
+      .badge {
+        margin-right: 10px;
+      }
+    }
+
+
+    // this is not pretty but I didn't wanted to go into the rabbit hole
+    .comment-row{
+      background-color: darken($light, 5%);
+      .comment-row{
+        background-color: darken($light, 10%);
+        .comment-row{
+          background-color: darken($light, 15%);
+          .comment-row{
+            background-color: darken($light, 20%);
+          }
+        }
+      }
+    }
+  }
+
+  .news-row{
+    background-color: $light;
+    display: flex;
+    justify-items: center;
+    border-radius: 3px;
+    padding: 10px;
+    justify-content: space-between;
+
+    .title{
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .content{
+      text-align: left;
+    }
+
+    &.active{
+      background-color: darken($light, 5%);
+    }
+  }
+}
+
+.news-url{
+  cursor: pointer;
+
+  font-size: 14px;
+  color: lighten($dark, 10%)
+}
+
+.sr-only{
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+button{
+  background-color: $theme;
+  border: 0;
+  color: white;
+  padding: 5px 15px;
+  height: 35px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: darken($theme, 5%);
+    color: $light;
+  }
+}
+
+.button-load-more{
+  margin-left: 40px;
+  width: 500px;
+  margin-bottom: 40px;
+}
+
+input.query-input{
+  width: 300px;
+  height: 35px;
+  box-sizing: border-box;
+}
+
+.input-wrapper{
+  button{
+    margin-left: 10px;
+    height: 30px;
+  }
+}
+
+
+.badge{
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgba(255,255,255,0.5);
+
+  &.points {
+    background-color: $theme;
+    color: $light;
+  }
+}
+
+.badges{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
